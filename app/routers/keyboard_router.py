@@ -3,6 +3,7 @@ from typing import List
 
 from app.models.response import APIResponse
 from app.models.keyboard import Keyboard
+from app.services.keyboard_service import KeyboardService
 
 
 keyboards_router = APIRouter(
@@ -12,23 +13,27 @@ keyboards_router = APIRouter(
 
 
 @keyboards_router.get("", response_model=APIResponse[List[Keyboard]])
-async def keyboards():
+async def get_keyboards():
     try:
-        return APIResponse.create(data=[])
-    
+        data = KeyboardService.get_all()
+
+        return APIResponse.create(data=data)
+
     except Exception as e:
         print(e, flush=True)
         raise HTTPException(status_code=500, detail=str(e))
 
 
 @keyboards_router.get("/{keyboard_id}", response_model=APIResponse[Keyboard])
-async def keyboard(
+async def get_keyboard(
     keyboard_id: str = Path(
         title="Keyboard ID", description="The ID of the keyboard to get data for"
     )
-):
+) -> APIResponse[Keyboard]:
     try:
-        return APIResponse.create(data=keyboard_id)
+        data = KeyboardService.get_one(id=keyboard_id)
+
+        return APIResponse.create(data=data)
 
     except Exception as e:
         print(e, flush=True)

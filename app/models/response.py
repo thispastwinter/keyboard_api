@@ -1,9 +1,7 @@
-from pydantic.generics import GenericModel
 from pydantic import BaseModel
-from typing import Generic, TypeVar
+from typing import Generic
+from typing_extensions import TypeVar, Self
 from datetime import datetime
-
-ISO_8601 = "YYYY-MM-DDTHH:MM:SS.mmmmmm"
 
 T = TypeVar("T")
 
@@ -14,7 +12,7 @@ class Meta(BaseModel):
     message: str | None
 
 
-class APIResponse(GenericModel, Generic[T]):
+class APIResponse(BaseModel, Generic[T]):
     data: T
     meta: Meta
 
@@ -22,10 +20,10 @@ class APIResponse(GenericModel, Generic[T]):
     def create(
         cls,
         data: T,
-        status_code: str | None = None,
+        status_code: int | None = None,
         date: str | None = None,
         message: str | None = None,
-    ):
+    ) -> Self:
         meta_status_code = None
         meta_date = None
 
@@ -37,11 +35,13 @@ class APIResponse(GenericModel, Generic[T]):
         if date is not None:
             meta_date = date
         else:
-            meta_date = datetime.now().strftime(ISO_8601)
+            meta_date = datetime.now().isoformat()
 
         return cls(
             data=data,
-            status_code=meta_status_code,
-            date=meta_date,
-            message=message,
+            meta=Meta(
+                status_code=meta_status_code,
+                date=meta_date,
+                message=message,
+            ),
         )

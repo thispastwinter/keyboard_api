@@ -1,9 +1,10 @@
-from pydantic import BaseModel
-from typing import Literal
+from typing_extensions import Literal, TypedDict
 
 
-class Switch(BaseModel):
+class Switch(TypedDict):
     id: str
+    name: str
+    brand_name: str
     bottom_force: str
     total_travel: str
     pre_travel: str

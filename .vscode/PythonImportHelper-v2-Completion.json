@@ -1,6 +1,86 @@
 [
     {
         "label": "Literal",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "TypedDict",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "TypedDict",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "TypeVar",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "Self",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "Literal",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "TypedDict",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Generic",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -32,7 +112,15 @@
         "documentation": {}
     },
     {
-        "label": "Literal",
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -48,27 +136,19 @@
         "documentation": {}
     },
     {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pydantic",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -80,11 +160,59 @@
         "documentation": {}
     },
     {
-        "label": "GenericModel",
-        "importPath": "pydantic.generics",
-        "description": "pydantic.generics",
+        "label": "Switch",
+        "importPath": "app.models.switch",
+        "description": "app.models.switch",
         "isExtraImport": true,
-        "detail": "pydantic.generics",
+        "detail": "app.models.switch",
+        "documentation": {}
+    },
+    {
+        "label": "Switch",
+        "importPath": "app.models.switch",
+        "description": "app.models.switch",
+        "isExtraImport": true,
+        "detail": "app.models.switch",
+        "documentation": {}
+    },
+    {
+        "label": "KeyCap",
+        "importPath": "app.models.keycap",
+        "description": "app.models.keycap",
+        "isExtraImport": true,
+        "detail": "app.models.keycap",
+        "documentation": {}
+    },
+    {
+        "label": "KeyCap",
+        "importPath": "app.models.keycap",
+        "description": "app.models.keycap",
+        "isExtraImport": true,
+        "detail": "app.models.keycap",
+        "documentation": {}
+    },
+    {
+        "label": "KeyCap",
+        "importPath": "app.models.keycap",
+        "description": "app.models.keycap",
+        "isExtraImport": true,
+        "detail": "app.models.keycap",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
         "documentation": {}
     },
     {
@@ -93,6 +221,54 @@
         "description": "datetime",
         "isExtraImport": true,
         "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
         "documentation": {}
     },
     {
@@ -136,11 +312,99 @@
         "documentation": {}
     },
     {
+        "label": "APIResponse",
+        "importPath": "app.models.response",
+        "description": "app.models.response",
+        "isExtraImport": true,
+        "detail": "app.models.response",
+        "documentation": {}
+    },
+    {
+        "label": "APIResponse",
+        "importPath": "app.models.response",
+        "description": "app.models.response",
+        "isExtraImport": true,
+        "detail": "app.models.response",
+        "documentation": {}
+    },
+    {
         "label": "Keyboard",
         "importPath": "app.models.keyboard",
         "description": "app.models.keyboard",
         "isExtraImport": true,
         "detail": "app.models.keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "Keyboard",
+        "importPath": "app.models.keyboard",
+        "description": "app.models.keyboard",
+        "isExtraImport": true,
+        "detail": "app.models.keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "KeyboardService",
+        "importPath": "app.services.keyboard_service",
+        "description": "app.services.keyboard_service",
+        "isExtraImport": true,
+        "detail": "app.services.keyboard_service",
+        "documentation": {}
+    },
+    {
+        "label": "KeyCapService",
+        "importPath": "app.services.keycap_service",
+        "description": "app.services.keycap_service",
+        "isExtraImport": true,
+        "detail": "app.services.keycap_service",
+        "documentation": {}
+    },
+    {
+        "label": "SwitchService",
+        "importPath": "app.services.switch_service",
+        "description": "app.services.switch_service",
+        "isExtraImport": true,
+        "detail": "app.services.switch_service",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "BuildData",
+        "importPath": "app.services.build_data",
+        "description": "app.services.build_data",
+        "isExtraImport": true,
+        "detail": "app.services.build_data",
+        "documentation": {}
+    },
+    {
+        "label": "BuildData",
+        "importPath": "app.services.build_data",
+        "description": "app.services.build_data",
+        "isExtraImport": true,
+        "detail": "app.services.build_data",
+        "documentation": {}
+    },
+    {
+        "label": "BuildData",
+        "importPath": "app.services.build_data",
+        "description": "app.services.build_data",
+        "isExtraImport": true,
+        "detail": "app.services.build_data",
         "documentation": {}
     },
     {
@@ -153,18 +417,34 @@
     },
     {
         "label": "RedirectResponse",
-        "importPath": "starlette.responses",
-        "description": "starlette.responses",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
         "isExtraImport": true,
-        "detail": "starlette.responses",
+        "detail": "fastapi.responses",
         "documentation": {}
     },
     {
         "label": "keyboards_router",
-        "importPath": "app.routers.keyboards",
-        "description": "app.routers.keyboards",
+        "importPath": "app.routers.keyboard_router",
+        "description": "app.routers.keyboard_router",
         "isExtraImport": true,
-        "detail": "app.routers.keyboards",
+        "detail": "app.routers.keyboard_router",
+        "documentation": {}
+    },
+    {
+        "label": "keycaps_router",
+        "importPath": "app.routers.keycap_router",
+        "description": "app.routers.keycap_router",
+        "isExtraImport": true,
+        "detail": "app.routers.keycap_router",
+        "documentation": {}
+    },
+    {
+        "label": "switches_router",
+        "importPath": "app.routers.switch_router",
+        "description": "app.routers.switch_router",
+        "isExtraImport": true,
+        "detail": "app.routers.switch_router",
         "documentation": {}
     },
     {
@@ -172,7 +452,7 @@
         "kind": 6,
         "importPath": "app.models.keyboard",
         "description": "app.models.keyboard",
-        "peekOfCode": "class Keyboard(BaseModel):\n    id: str\n    layout: KeyboardLayout\n    color_way: List[str]\n    led: bool\n    hot_swap: bool\n    price: float\n    num_of_pins: Literal[3, 5]\n    switch: Switch",
+        "peekOfCode": "class Keyboard(TypedDict):\n    id: str\n    name: str\n    brand_name: str\n    layout: KeyboardLayout\n    color_way: List[str]\n    led: bool\n    hot_swap: bool\n    price: float\n    num_of_pins: Literal[3, 5]",
         "detail": "app.models.keyboard",
         "documentation": {}
     },
@@ -186,11 +466,20 @@
         "documentation": {}
     },
     {
+        "label": "KeyCap",
+        "kind": 6,
+        "importPath": "app.models.keycap",
+        "description": "app.models.keycap",
+        "peekOfCode": "class KeyCap(TypedDict):\n    id: str\n    name: str\n    brand_name: str  \n    material: str",
+        "detail": "app.models.keycap",
+        "documentation": {}
+    },
+    {
         "label": "Meta",
         "kind": 6,
         "importPath": "app.models.response",
         "description": "app.models.response",
-        "peekOfCode": "class Meta(BaseModel):\n    date: str\n    status_code: int\n    message: str | None\nclass APIResponse(GenericModel, Generic[T]):\n    data: T\n    meta: Meta\n    @classmethod\n    def create(\n        cls,",
+        "peekOfCode": "class Meta(BaseModel):\n    date: str\n    status_code: int\n    message: str | None\nclass APIResponse(BaseModel, Generic[T]):\n    data: T\n    meta: Meta\n    @classmethod\n    def create(\n        cls,",
         "detail": "app.models.response",
         "documentation": {}
     },
@@ -199,16 +488,7 @@
         "kind": 6,
         "importPath": "app.models.response",
         "description": "app.models.response",
-        "peekOfCode": "class APIResponse(GenericModel, Generic[T]):\n    data: T\n    meta: Meta\n    @classmethod\n    def create(\n        cls,\n        data: T,\n        status_code: str | None = None,\n        date: str | None = None,\n        message: str | None = None,",
-        "detail": "app.models.response",
-        "documentation": {}
-    },
-    {
-        "label": "ISO_8601",
-        "kind": 5,
-        "importPath": "app.models.response",
-        "description": "app.models.response",
-        "peekOfCode": "ISO_8601 = \"YYYY-MM-DDTHH:MM:SS.mmmmmm\"\nT = TypeVar(\"T\")\nclass Meta(BaseModel):\n    date: str\n    status_code: int\n    message: str | None\nclass APIResponse(GenericModel, Generic[T]):\n    data: T\n    meta: Meta\n    @classmethod",
+        "peekOfCode": "class APIResponse(BaseModel, Generic[T]):\n    data: T\n    meta: Meta\n    @classmethod\n    def create(\n        cls,\n        data: T,\n        status_code: int | None = None,\n        date: str | None = None,\n        message: str | None = None,",
         "detail": "app.models.response",
         "documentation": {}
     },
@@ -217,7 +497,7 @@
         "kind": 5,
         "importPath": "app.models.response",
         "description": "app.models.response",
-        "peekOfCode": "T = TypeVar(\"T\")\nclass Meta(BaseModel):\n    date: str\n    status_code: int\n    message: str | None\nclass APIResponse(GenericModel, Generic[T]):\n    data: T\n    meta: Meta\n    @classmethod\n    def create(",
+        "peekOfCode": "T = TypeVar(\"T\")\nclass Meta(BaseModel):\n    date: str\n    status_code: int\n    message: str | None\nclass APIResponse(BaseModel, Generic[T]):\n    data: T\n    meta: Meta\n    @classmethod\n    def create(",
         "detail": "app.models.response",
         "documentation": {}
     },
@@ -226,17 +506,80 @@
         "kind": 6,
         "importPath": "app.models.switch",
         "description": "app.models.switch",
-        "peekOfCode": "class Switch(BaseModel):\n    id: str\n    bottom_force: str\n    total_travel: str\n    pre_travel: str\n    initial_force: str\n    num_of_pins: Literal[3, 5]\n    led_direction: Literal[\"north\", \"south\"]\n    type: Literal[\"clicky\", \"tactile\", \"linear\"]",
+        "peekOfCode": "class Switch(TypedDict):\n    id: str\n    name: str\n    brand_name: str\n    bottom_force: str\n    total_travel: str\n    pre_travel: str\n    initial_force: str\n    num_of_pins: Literal[3, 5]\n    led_direction: Literal[\"north\", \"south\"]",
         "detail": "app.models.switch",
         "documentation": {}
     },
     {
         "label": "keyboards_router",
         "kind": 5,
-        "importPath": "app.routers.keyboards",
-        "description": "app.routers.keyboards",
-        "peekOfCode": "keyboards_router = APIRouter(\n    tags=[\"Keyboards\"],\n    prefix=\"/keyboards\",\n)\n@keyboards_router.get(\"\", response_model=APIResponse[List[Keyboard]])\nasync def keyboards():\n    try:\n        return APIResponse.create(data=[])\n    except Exception as e:\n        print(e, flush=True)",
-        "detail": "app.routers.keyboards",
+        "importPath": "app.routers.keyboard_router",
+        "description": "app.routers.keyboard_router",
+        "peekOfCode": "keyboards_router = APIRouter(\n    tags=[\"Keyboards\"],\n    prefix=\"/keyboards\",\n)\n@keyboards_router.get(\"\", response_model=APIResponse[List[Keyboard]])\nasync def get_keyboards():\n    try:\n        data = KeyboardService.get_all()\n        return APIResponse.create(data=data)\n    except Exception as e:",
+        "detail": "app.routers.keyboard_router",
+        "documentation": {}
+    },
+    {
+        "label": "keycaps_router",
+        "kind": 5,
+        "importPath": "app.routers.keycap_router",
+        "description": "app.routers.keycap_router",
+        "peekOfCode": "keycaps_router = APIRouter(\n    tags=[\"Keycaps\"],\n    prefix=\"/keycaps\",\n)\n@keycaps_router.get(\"\", response_model=APIResponse[List[KeyCap]])\nasync def get_keycaps() -> APIResponse[List[KeyCap]]:\n    try:\n        data = KeyCapService.get_all()\n        return APIResponse.create(data=data)\n    except Exception as e:",
+        "detail": "app.routers.keycap_router",
+        "documentation": {}
+    },
+    {
+        "label": "switches_router",
+        "kind": 5,
+        "importPath": "app.routers.switch_router",
+        "description": "app.routers.switch_router",
+        "peekOfCode": "switches_router = APIRouter(\n    tags=[\"Switches\"],\n    prefix=\"/switches\",\n)\n@switches_router.get(\"\", response_model=APIResponse[List[Switch]])\nasync def get_switches():\n    try:\n        data = SwitchService.get_all()\n        return APIResponse.create(data=data)\n    except Exception as e:",
+        "detail": "app.routers.switch_router",
+        "documentation": {}
+    },
+    {
+        "label": "BuildData",
+        "kind": 6,
+        "importPath": "app.services.build_data",
+        "description": "app.services.build_data",
+        "peekOfCode": "class BuildData(BaseModel, Generic[T], ABC):\n    @abstractmethod\n    def get_all(cls) -> List[T]:\n        pass\n    @abstractmethod\n    def get_one(cls, id: str) -> T:\n        pass",
+        "detail": "app.services.build_data",
+        "documentation": {}
+    },
+    {
+        "label": "T",
+        "kind": 5,
+        "importPath": "app.services.build_data",
+        "description": "app.services.build_data",
+        "peekOfCode": "T = TypeVar(\"T\")\nclass BuildData(BaseModel, Generic[T], ABC):\n    @abstractmethod\n    def get_all(cls) -> List[T]:\n        pass\n    @abstractmethod\n    def get_one(cls, id: str) -> T:\n        pass",
+        "detail": "app.services.build_data",
+        "documentation": {}
+    },
+    {
+        "label": "KeyboardService",
+        "kind": 6,
+        "importPath": "app.services.keyboard_service",
+        "description": "app.services.keyboard_service",
+        "peekOfCode": "class KeyboardService(BuildData[Keyboard]):\n    @classmethod\n    def get_all(cls) -> List[Keyboard]:\n        return keyboards\n    @classmethod\n    def get_one(cls, id: str) -> Keyboard:\n        return Keyboard(\n            id=id,\n            brand_name=\"A Keyboard Brand\",\n            color_way=[\"yello\", \"green\"],",
+        "detail": "app.services.keyboard_service",
+        "documentation": {}
+    },
+    {
+        "label": "KeyCapService",
+        "kind": 6,
+        "importPath": "app.services.keycap_service",
+        "description": "app.services.keycap_service",
+        "peekOfCode": "class KeyCapService(BuildData[KeyCap]):\n    @classmethod\n    def get_all(cls) -> List[KeyCap]:\n        return keycaps\n    @classmethod\n    def get_one(cls, id: str) -> KeyCap:\n        return KeyCap(\n            id=id,\n            name=\"Classic Black\",\n            brand_name=\"XYZ Keyboards\",",
+        "detail": "app.services.keycap_service",
+        "documentation": {}
+    },
+    {
+        "label": "SwitchService",
+        "kind": 6,
+        "importPath": "app.services.switch_service",
+        "description": "app.services.switch_service",
+        "peekOfCode": "class SwitchService(BuildData[Switch]):\n    @classmethod\n    def get_all(cls) -> List[Switch]:\n        return switches\n    @classmethod\n    def get_one(cls, id: str) -> Switch:\n        return Switch(\n            id=id,\n            name=\"Red Switch\",\n            brand_name=\"XYZ Switches\",",
+        "detail": "app.services.switch_service",
         "documentation": {}
     },
     {
@@ -244,7 +587,7 @@
         "kind": 2,
         "importPath": "app.main",
         "description": "app.main",
-        "peekOfCode": "def app_docs_redirect():\n    return RedirectResponse(url=\"/api/v1/docs\")\napp.include_router(keyboards_router)\napp.mount(path=\"/api/v1\", app=app)",
+        "peekOfCode": "def app_docs_redirect():\n    return RedirectResponse(url=\"/api/v1/docs\")\napp.include_router(keyboards_router)\napp.include_router(keycaps_router)\napp.include_router(switches_router)\napp.mount(path=\"/api/v1\", app=app)",
         "detail": "app.main",
         "documentation": {}
     },
