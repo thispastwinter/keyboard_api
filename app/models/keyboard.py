@@ -4,8 +4,6 @@ from app.models.switch import Switch
 from app.models.keycap import KeyCap
 
 KeyboardLayout = Literal[
-    "ANSI",
-    "ISO",
     "TKL",
     "75%",
     "60%",
@@ -14,7 +12,6 @@ KeyboardLayout = Literal[
     "Ortholinear",
     "ErgoDox",
     "HHKB",
-    "60% ISO",
     "Chiclet",
 ]
 
@@ -29,5 +26,6 @@ class Keyboard(TypedDict):
     hot_swap: bool
     price: float
     num_of_pins: Literal[3, 5]
+    led_direction: Literal["north", "south"] | None
     switch: Switch | None
     keycap: KeyCap | None
