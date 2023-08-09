@@ -13,10 +13,9 @@ keyboards_router = APIRouter(
 
 
 @keyboards_router.get("", response_model=APIResponse[List[KeyboardPartial]])
-def get_keyboards() -> APIResponse[KeyboardPartial]:
+async def get_keyboards():
     try:
-        data = KeyboardService.get_all()
-        print(data)
+        data = await KeyboardService.get_all()
 
         return APIResponse.create(data=data)
 
@@ -26,13 +25,13 @@ def get_keyboards() -> APIResponse[KeyboardPartial]:
 
 
 @keyboards_router.get("/{keyboard_id}", response_model=APIResponse[KeyboardFull])
-def get_keyboard(
+async def get_keyboard(
     keyboard_id: str = Path(
         title="Keyboard ID", description="The ID of the keyboard to get data for"
     )
-) -> APIResponse[KeyboardFull]:
+):
     try:
-        data = KeyboardService.get_one(id=keyboard_id)
+        data = await KeyboardService.get_one(id=keyboard_id)
 
         return APIResponse.create(data=data)
 

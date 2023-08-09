@@ -1,29 +1,30 @@
-from typing import List
-
 from app.services.build_data import BuildData
 from app.models.keyboard import KeyboardFull, KeyboardPartial
-from app.services.supabase_service import SupabaseService
-
-client = SupabaseService.get_client()
+from app.services.database_service import RelatedField, DatabaseService
 
 
 class KeyboardService(BuildData):
     @classmethod
-    def get_all(cls) -> List[KeyboardPartial]:
-        keyboards_data = client.table("keyboards").select("*").execute()
+    async def get_all(cls):
+        keyboards_data = await DatabaseService[KeyboardPartial].get_all("keyboards")
 
-        return keyboards_data["data"]
+        return keyboards_data
 
     @classmethod
-    def get_one(cls, id: str) -> KeyboardFull:
-        keyboard_data = (
-            client.table("keyboards")
-            .select(
-                "id, name, brand_name, color_way, led, hot_swap, price, num_of_pins, led_direction, switch:switch_id(*, type(*)), keycap:keycap_id(*), layout:layout_id(*)"
-            )
-            .eq("id", id)
-            .single()
-            .execute()
+    async def get_one(cls, id: str):
+        keyboard_data = await DatabaseService[KeyboardFull].get_one(
+            "keyboards",
+            id=id,
+            fields=["id", "name", "brand_name", "color_way", "led", "hot_swap", "price", "num_of_pins", "led_direction"],
+            related_fields=[
+                RelatedField(name="layout_id", alias="layout"),
+                RelatedField(
+                    name="switch_id",
+                    alias="switch",
+                    nested_fields=RelatedField(name="type", alias="type"),
+                ),
+                RelatedField(name="keycap_id", alias="keycap"),
+            ],
         )
 
-        return keyboard_data["data"]
+        return keyboard_data

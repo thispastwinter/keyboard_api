@@ -1,4 +1,4 @@
-from typing_extensions import Literal, TypedDict
+from typing_extensions import Literal, TypedDict, get_args
 from typing import List
 from app.models.switch import Switch
 from app.models.keycap import KeyCap

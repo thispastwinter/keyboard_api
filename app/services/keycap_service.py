@@ -1,21 +1,16 @@
-from typing import List
-
 from app.services.build_data import BuildData
 from app.models.keycap import KeyCap
-from app.services.supabase_service import SupabaseService
-
-client = SupabaseService.get_client()
-
+from app.services.database_service import DatabaseService
 
 class KeyCapService(BuildData):
     @classmethod
-    def get_all(cls) -> List[KeyCap]:
-        keycaps_data = client.table("keycaps").select("*").execute()
+    async def get_all(cls):
+        keycaps_data = await DatabaseService[KeyCap].get_all("keycaps")
 
-        return keycaps_data["data"]
+        return keycaps_data
 
     @classmethod
-    def get_one(cls, id: str) -> KeyCap:
-        keycap_data = client.table("keycaps").select("*").eq("id", id).single().execute()
+    async def get_one(cls, id: str):
+        keycap_data = await DatabaseService[KeyCap].get_one("keycaps", id=id)
 
-        return keycap_data["data"]
+        return keycap_data

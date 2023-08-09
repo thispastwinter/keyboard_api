@@ -13,9 +13,9 @@ keycaps_router = APIRouter(
 
 
 @keycaps_router.get("", response_model=APIResponse[List[KeyCap]])
-def get_keycaps() -> APIResponse[List[KeyCap]]:
+async def get_keycaps():
     try:
-        data = KeyCapService.get_all()
+        data = await KeyCapService.get_all()
 
         return APIResponse.create(data=data)
 
@@ -25,13 +25,13 @@ def get_keycaps() -> APIResponse[List[KeyCap]]:
 
 
 @keycaps_router.get("/{keycap_id}", response_model=APIResponse[KeyCap])
-def get_keycap(
+async def get_keycap(
     keycap_id: str = Path(
         title="KeyCap ID", description="The ID of the KeyCap to get data for"
     )
-) -> APIResponse[KeyCap]:
+):
     try:
-        data = KeyCapService.get_one(id=keycap_id)
+        data = await KeyCapService.get_one(id=keycap_id)
 
         return APIResponse.create(data=data)
 

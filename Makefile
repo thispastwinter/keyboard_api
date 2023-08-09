@@ -1,5 +1,8 @@
+install:
+	pipenv install --ignore-pipfile
+
 run:
-	python3 -m uvicorn app.main:app --host 0.0.0.0 --port 3333 --reload
+	pipenv run uvicorn app.main:app --host 0.0.0.0 --port 3333 --reload
 
 run-database:
 	supabase start
