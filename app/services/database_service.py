@@ -25,10 +25,6 @@ class DatabaseService(Generic[Data]):
     key = config.get_supabase_key()
 
     @staticmethod
-    def _build_ref(alias: str, name: str):
-        return f"{alias}:{name}"
-
-    @staticmethod
     # This function handles building our parameters for the select query, should this grow more complex
     # the method for querying our db should likely change
     def _build_parameters(
