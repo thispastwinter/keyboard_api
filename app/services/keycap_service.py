@@ -2,39 +2,20 @@ from typing import List
 
 from app.services.build_data import BuildData
 from app.models.keycap import KeyCap
+from app.services.supabase_service import SupabaseService
 
-keycaps: List[KeyCap] = [
-    {
-        "id": "1",
-        "name": "Classic Black",
-        "brand_name": "XYZ Keyboards",
-        "material": "ABS plastic",
-    },
-    {
-        "id": "2",
-        "name": "Retro Beige",
-        "brand_name": "ABC Keyboards",
-        "material": "PBT plastic",
-    },
-    {
-        "id": "3",
-        "name": "Colorful Rainbow",
-        "brand_name": "DEF Keyboards",
-        "material": "Double-shot PBT plastic",
-    },
-]
+client = SupabaseService.get_client()
 
 
-class KeyCapService(BuildData[KeyCap]):
+class KeyCapService(BuildData):
     @classmethod
     def get_all(cls) -> List[KeyCap]:
-        return keycaps
+        keycaps_data = client.table("keycaps").select("*").execute()
+
+        return keycaps_data["data"]
 
     @classmethod
     def get_one(cls, id: str) -> KeyCap:
-        return KeyCap(
-            id=id,
-            name="Classic Black",
-            brand_name="XYZ Keyboards",
-            material="ABS plastic",
-        )
+        keycap_data = client.table("keycaps").select("*").eq("id", id).single().execute()
+
+        return keycap_data["data"]

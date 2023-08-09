@@ -5,6 +5,7 @@ from fastapi.responses import RedirectResponse
 from app.routers.keyboard_router import keyboards_router
 from app.routers.keycap_router import keycaps_router
 from app.routers.switch_router import switches_router
+from app.services.supabase_service import SupabaseService
 
 origins = [
     "http://localhost:3000",

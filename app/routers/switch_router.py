@@ -13,7 +13,7 @@ switches_router = APIRouter(
 
 
 @switches_router.get("", response_model=APIResponse[List[Switch]])
-async def get_switches():
+def get_switches():
     try:
         data = SwitchService.get_all()
 
@@ -25,7 +25,7 @@ async def get_switches():
 
 
 @switches_router.get("/{switch_id}", response_model=APIResponse[Switch])
-async def get_switch(
+def get_switch(
     switch_id: str = Path(
         title="Switch ID", description="The ID of the Switch to get data for"
     )
