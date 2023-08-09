@@ -1,4 +1,5 @@
 from typing_extensions import Literal, TypedDict
+from app.models.switch_type import SwitchType
 
 
 class Switch(TypedDict):
@@ -8,4 +9,4 @@ class Switch(TypedDict):
     total_travel: str
     pre_travel: str
     num_of_pins: Literal[3, 5]
-    type: Literal["clicky", "tactile", "linear"]
+    type: SwitchType

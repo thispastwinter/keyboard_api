@@ -1,15 +1,15 @@
 from pydantic import BaseModel
 from abc import ABC, abstractmethod
-from typing import Generic, TypeVar, List, Callable
+from typing import Generic, TypeVar, List
 
 T = TypeVar("T")
 
 
 class BuildData(BaseModel, Generic[T], ABC):
     @abstractmethod
-    def get_all(cls) -> List[T]:
+    async def get_all(cls) -> List[T]:
         pass
 
     @abstractmethod
-    def get_one(cls, id: str) -> T:
+    async def get_one(cls, id: str) -> T:
         pass

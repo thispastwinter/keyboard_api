@@ -1,57 +1,40 @@
-from typing import List
-
 from app.services.build_data import BuildData
-from app.models.keyboard import Keyboard
-
-keyboards: List[Keyboard] = [
-    {
-        "id": "kbd001",
-        "name": "MechMaster Pro",
-        "brand_name": "MechTech",
-        "layout": "TKL",
-        "color_way": ["Black", "Gunmetal Gray", "RGB"],
-        "led": True,
-        "hot_swap": False,
-        "price": 129.99,
-        "led_direction": "south",
-        "num_of_pins": 5,
-        "switch": {
-            "id": "sw001",
-            "name": "Cherry MX Brown",
-            "brand_name": "Cherry",
-            "total_travel": "4.0mm",
-            "pre_travel": "2.0mm",
-            "num_of_pins": 5,
-            "type": "tactile",
-        },
-        "keycap": {
-            "id": "kc001",
-            "name": "Classic DSA",
-            "brand_name": "Signature Plastics",
-            "material": "PBT",
-        },
-    },
-]
+from app.models.keyboard import KeyboardFull, KeyboardPartial
+from app.services.database_service import RelatedField, DatabaseService
 
 
-class KeyboardService(BuildData[Keyboard]):
+class KeyboardService(BuildData):
     @classmethod
-    def get_all(cls) -> List[Keyboard]:
-        return keyboards
+    async def get_all(cls):
+        keyboards_data = await DatabaseService[KeyboardPartial].get_all("keyboards")
+
+        return keyboards_data
 
     @classmethod
-    def get_one(cls, id: str) -> Keyboard:
-        return Keyboard(
+    async def get_one(cls, id: str):
+        keyboard_data = await DatabaseService[KeyboardFull].get_one(
+            "keyboards",
             id=id,
-            brand_name="A Keyboard Brand",
-            color_way=["yellow", "green"],
-            hot_swap=True,
-            keycap=None,
-            switch=None,
-            price=199.99,
-            layout="75%",
-            led=True,
-            led_direction="south",
-            name="Awesome Keyboard",
-            num_of_pins=5,
+            fields=[
+                "id",
+                "name",
+                "brand_name",
+                "color_way",
+                "led",
+                "hot_swap",
+                "price",
+                "num_of_pins",
+                "led_direction",
+            ],
+            related_fields=[
+                RelatedField(name="layout_id", alias="layout"),
+                RelatedField(
+                    name="switch_id",
+                    alias="switch",
+                    nested_fields=RelatedField(name="type", alias="type"),
+                ),
+                RelatedField(name="keycap_id", alias="keycap"),
+            ],
         )
+
+        return keyboard_data
