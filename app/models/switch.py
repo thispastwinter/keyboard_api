@@ -1,6 +1,7 @@
 from typing_extensions import Literal, TypedDict
 from app.models.switch_type import SwitchType
 
+
 class Switch(TypedDict):
     id: str
     name: str

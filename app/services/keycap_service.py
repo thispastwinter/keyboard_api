@@ -2,6 +2,7 @@ from app.services.build_data import BuildData
 from app.models.keycap import KeyCap
 from app.services.database_service import DatabaseService
 
+
 class KeyCapService(BuildData):
     @classmethod
     async def get_all(cls):

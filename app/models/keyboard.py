@@ -4,6 +4,7 @@ from app.models.switch import Switch
 from app.models.keycap import KeyCap
 from app.models.layout import Layout
 
+
 class KeyboardBase(TypedDict):
     id: str
     name: str

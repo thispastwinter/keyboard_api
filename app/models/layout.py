@@ -12,6 +12,7 @@ KeyboardLayoutName = Literal[
     "Chiclet",
 ]
 
+
 class Layout(TypedDict):
     id: str
     name: KeyboardLayoutName

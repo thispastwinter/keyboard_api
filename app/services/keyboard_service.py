@@ -15,7 +15,17 @@ class KeyboardService(BuildData):
         keyboard_data = await DatabaseService[KeyboardFull].get_one(
             "keyboards",
             id=id,
-            fields=["id", "name", "brand_name", "color_way", "led", "hot_swap", "price", "num_of_pins", "led_direction"],
+            fields=[
+                "id",
+                "name",
+                "brand_name",
+                "color_way",
+                "led",
+                "hot_swap",
+                "price",
+                "num_of_pins",
+                "led_direction",
+            ],
             related_fields=[
                 RelatedField(name="layout_id", alias="layout"),
                 RelatedField(
