@@ -31,10 +31,11 @@ class KeyboardService(BuildData):
                 RelatedField(
                     name="switch_id",
                     alias="switch",
-                    nested_fields=RelatedField(name="type", alias="type"),
+                    related_fields=[RelatedField(alias="type", name="type")],
                 ),
                 RelatedField(name="keycap_id", alias="keycap"),
             ],
         )
+        print(keyboard_data)
 
         return keyboard_data

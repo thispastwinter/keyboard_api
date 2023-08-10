@@ -1,4 +1,4 @@
-from typing import Generic, TypeVar, List, Literal
+from typing import Generic, TypeVar, List, Literal, Optional
 from pydantic import BaseModel
 from httpx import AsyncClient
 
@@ -9,26 +9,26 @@ config.get_env_variables()
 
 Data = TypeVar("Data")
 Table = Literal["keyboards", "switches", "keycaps", "switch_types", "layouts"]
+Fields = List[str]
 
 
-class RelatedFieldBase(BaseModel):
+class RelatedField(BaseModel):
     name: str
     alias: str
-
-
-class RelatedField(RelatedFieldBase):
-    nested_fields: RelatedFieldBase | None = None
+    fields: Optional[Fields] = None
+    related_fields: Optional[List["RelatedField"]] = None
 
 
 class DatabaseService(Generic[Data]):
     url = config.get_supabase_url()
     key = config.get_supabase_key()
 
-    @staticmethod
+    @classmethod
     # This function handles building our parameters for the select query, should this grow more complex
     # the method for querying our db should likely change
     def _build_parameters(
-        fields: List[str] | None = None,
+        cls,
+        fields: Fields | None = None,
         related_fields: List[RelatedField] | None = None,
     ):
         parameters = ["*"]
@@ -37,21 +37,17 @@ class DatabaseService(Generic[Data]):
             # If there are fields specified, we replace the default wildcard with the user defined fields
             parameters = fields
 
-        # Here we process any related fields
+        # Here we recursively process any related fields to the nth number of related_fields
         if related_fields:
             for field in related_fields:
                 # We build the reference to the foreign key along with the defined alias
                 name = f"{field.alias}:{field.name}"
-                if field.nested_fields is not None:
-                    # If there are nested fields, we need to build the reference for those
-                    nested_name = (
-                        f"{field.nested_fields.alias}:{field.nested_fields.name}"
-                    )
-                    # We grab all fields on the related table and all fields on the nested table
-                    parameters.append(f"{name}(*, {nested_name}(*))")
-                else:
-                    # We grab all fields on the related table
-                    parameters.append(f"{name}(*)")
+                # We build the nested params
+                nested_parameters = cls._build_parameters(
+                    fields=field.fields, related_fields=field.related_fields
+                )
+                # We append the nested params
+                parameters.append(f"{name}({nested_parameters})")
 
         return ",".join(parameters)
 

@@ -1,6 +1,9 @@
 install:
 	pipenv install --ignore-pipfile
 
+install-dev:
+	pipenv install --dev --ignore-pipfile
+
 format:
 	pipenv run black .
 
@@ -12,3 +15,9 @@ run-database:
 
 run-migration:
 	supabase migration up
+
+test:
+	pipenv run pytest
+
+test-verbose:
+	pipenv run pytest -s -vv

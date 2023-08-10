@@ -42,12 +42,12 @@ typing-extensions = "==4.7.1"
 urllib3 = "==1.26.16"
 uvicorn = "==0.23.2"
 
-
 [dev-packages]
 annotated-types = "==0.5.0"
 black = "*"
 mypy = "*"
 mypy-extensions = "==1.0.0"
+pytest = "*"
 
 [requires]
 python_version = "3.10"
