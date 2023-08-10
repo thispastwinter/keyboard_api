@@ -21,3 +21,12 @@ test:
 
 test-verbose:
 	pipenv run pytest -s -vv
+
+typecheck:
+	pipenv run mypy app/main.py
+	
+lint-format:
+	pipenv run black --check ./app
+
+ci: test lint-format typecheck
+
