@@ -36,6 +36,5 @@ class KeyboardService(BuildData):
                 RelatedField(name="keycap_id", alias="keycap"),
             ],
         )
-        print(keyboard_data)
 
         return keyboard_data
