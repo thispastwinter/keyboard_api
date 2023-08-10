@@ -10,3 +10,6 @@ class Switch(TypedDict):
     pre_travel: str
     num_of_pins: Literal[3, 5]
     type: SwitchType
+    price: float | None
+    price_per_unit: float | None
+    unit_count: int | None
