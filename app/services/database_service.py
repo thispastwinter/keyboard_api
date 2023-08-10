@@ -14,7 +14,7 @@ Fields = List[str]
 
 class RelatedField(BaseModel):
     name: str
-    alias: str
+    alias: Optional[str] = None
     fields: Optional[Fields] = None
     related_fields: Optional[List["RelatedField"]] = None
 
@@ -41,7 +41,7 @@ class DatabaseService(Generic[Data]):
         if related_fields:
             for field in related_fields:
                 # We build the reference to the foreign key along with the defined alias
-                name = f"{field.alias}:{field.name}"
+                name = f"{field.alias}:{field.name}" if field.alias else field.name
                 # We build the nested params
                 nested_parameters = cls._build_parameters(
                     fields=field.fields, related_fields=field.related_fields
@@ -61,7 +61,7 @@ class DatabaseService(Generic[Data]):
     async def get_all(
         cls,
         table: Table,
-        fields: List[str] | None = None,
+        fields: Fields | None = None,
         related_fields: List[RelatedField] | None = None,
     ) -> List[Data]:
         client = cls.get_client()
