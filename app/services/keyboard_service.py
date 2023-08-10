@@ -31,7 +31,7 @@ class KeyboardService(BuildData):
                 RelatedField(
                     name="switch_id",
                     alias="switch",
-                    related_fields=[RelatedField(alias="type", name="type")],
+                    related_fields=[RelatedField(name="type")],
                 ),
                 RelatedField(name="keycap_id", alias="keycap"),
             ],
